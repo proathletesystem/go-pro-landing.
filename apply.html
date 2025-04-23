@@ -3,54 +3,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apply Now | Pro Athlete System</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+    header {
+      background-color: #000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      color: #fdd835;
+      font-size: 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a.active {
+      color: #fdd835;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #1c1c1c;
+      border-radius: 8px;
+    }
+    h1 {
+      color: #fdd835;
+      text-align: center;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 1000px;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <nav class="nav">
-      <a href="/" class="logo">Pro Athlete System</a>
-      <ul class="nav-links">
-        <li><a href="/#about">About</a></li>
-        <li><a href="/#program">Program</a></li>
-        <li><a href="/#contact">Contact</a></li>
-        <li><a href="/apply" class="active">Apply Now</a></li>
+  <header>
+    <a href="/" class="logo">Pro Athlete System</a>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="https://proathletesystem.github.io/go-pro-landing/apply.html" class="active">Apply Now</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="main-content">
-    <section class="apply-section">
-      <h1>Join the Pro Athlete System</h1>
-      <p>Ready to take your athletic career to the next level? Fill out the application below to get started.</p>
-      <form class="application-form" action="https://formspree.io/f/your-form-id" method="POST">
-        <label for="full-name">Full Name</label>
-        <input type="text" id="full-name" name="full-name" required />
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="sport">Sport</label>
-        <input type="text" id="sport" name="sport" required />
-
-        <label for="experience">Experience Level</label>
-        <select id="experience" name="experience" required>
-          <option value="">Select</option>
-          <option value="beginner">Beginner</option>
-          <option value="intermediate">Intermediate</option>
-          <option value="advanced">Advanced</option>
-          <option value="professional">Professional</option>
-        </select>
-
-        <label for="goals">Tell us about your goals</label>
-        <textarea id="goals" name="goals" rows="5" required></textarea>
-
-        <button type="submit" class="submit-button">Submit Application</button>
-      </form>
-    </section>
+  <main class="container">
+    <h1>Apply Now</h1>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDMYvHYrkQbNAXqJel51E14jEqK2AvUkiCrL5yPYJY91PHSw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </main>
-
-  <footer class="footer">
-    <p>&copy; 2025 Pro Athlete System. All rights reserved.</p>
-  </footer>
 </body>
 </html>
