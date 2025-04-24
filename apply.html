@@ -29,3 +29,27 @@
     <input type="submit" value="Submit Application" class="button">
   </form>
 </section>
+<div id="success-message" style="display:none; text-align:center; padding: 20px; color: #00ff88;">
+  Thank you for applying! We’ll be in touch soon.
+</div>
+
+<script>
+  const form = document.querySelector("form");
+  const success = document.getElementById("success-message");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    })
+    .then(response => {
+      if (response.ok) {
+        form.style.display = "none";
+        success.style.display = "block";
+      }
+    });
+  });
+</script>
