@@ -15,6 +15,13 @@
     .section-dark { background: #1a1a2e; }
     ul { list-style-type: none; padding: 0; font-size: 1em; }
     ul li { margin-bottom: 10px; }
+    .question { margin-bottom: 20px; text-align: left; }
+    .question p { font-weight: bold; }
+    label { display: block; margin-bottom: 5px; }
+    input[type="email"] { width: 100%; padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc; }
+    button { background-color: #1e90ff; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px; }
+    button:hover { background-color: #0077cc; }
+    #result { margin-top: 20px; font-size: 18px; font-weight: bold; }
     @media (min-width: 600px) {
       h1 { font-size: 3em; }
       h2 { font-size: 2em; }
@@ -31,7 +38,7 @@
   <h1>The Pro Athlete System</h1>
   <h2>Train. Measure. Prove You’re Ready for the Next Level.</h2>
   <p>A 12-week remote coaching + performance testing system for serious athletes who want to go pro.</p>
-  <a href="https://form.typeform.com/to/u4ozaLq9" class="button">Take the Pro Potential Quiz</a>
+  <a href="#quiz" class="button">Take the Pro Potential Quiz</a>
 </header>
 
 <!-- SECTION 2 - What You Get -->
@@ -43,8 +50,7 @@
     <li>• Scout-Ready Readiness Report: A PDF you can send to scouts, recruiters, or agents</li>
   </ul>
   <p><strong>Price:</strong> $1,997 or 3 payments of $697</p>
-<a href="apply.html" class="button">Apply Now</a>
-
+  <a href="apply.html" class="button">Apply Now</a>
 </section>
 
 <!-- SECTION 3 - Sample Tests -->
@@ -85,12 +91,52 @@
 <section class="section-dark">
   <h2>Ready to Prove You Belong?</h2>
   <p>Take the quiz to get started, or apply to join the next cohort.</p>
-  <a href="https://form.typeform.com/to/u4ozaLq9" class="button">Take the Pro Potential Quiz</a>
-  <br><br>
+  <a href="#quiz" class="button">Take the Pro Potential Quiz</a><br><br>
   <a href="apply.html" class="button">Apply Now</a>
-
-
 </section>
+
+<!-- SECTION 7 - Quiz -->
+<section id="quiz" style="background: #0e0e15; padding: 40px 20px; max-width: 900px; margin: auto;">
+  <h2 style="text-align:center;">Pro Potential Quiz</h2>
+  <form id="quizForm">
+    <!-- Quiz Questions -->
+    <!-- You would insert the full 10-question quiz with A/B/C/D scoring here -->
+
+    <!-- Email -->
+    <div class="question">
+      <p>Email <span style="color: red;">*</span></p>
+      <input type="email" name="email" required>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="button" onclick="calculateScore()">Submit</button>
+    <div id="result"></div>
+  </form>
+</section>
+
+<script>
+  function calculateScore() {
+    const form = document.getElementById('quizForm');
+    const formData = new FormData(form);
+    let totalScore = 0;
+
+    for (let [name, value] of formData.entries()) {
+      if (name !== 'email') {
+        totalScore += parseInt(value);
+      }
+    }
+
+    const totalQuestions = 10; // Update to match the number of questions
+    const answered = Array.from(formData.entries()).filter(([k]) => k !== "email").length;
+
+    if (answered < totalQuestions) {
+      document.getElementById('result').textContent = "Please answer all questions!";
+      return;
+    }
+
+    document.getElementById('result').textContent = `Your total score is: ${totalScore}`;
+  }
+</script>
 
 </body>
 </html>
