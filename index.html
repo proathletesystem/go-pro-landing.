@@ -10,7 +10,8 @@
     .logo { max-width: 150px; margin: 0 auto 20px; width: 100%; height: auto; }
     h1 { font-size: 2.5em; margin-bottom: 10px; }
     h2 { font-size: 1.75em; margin-bottom: 20px; }
-    h3.step-label { font-size: 1.5em; color: #ffcc00; background: #1e90ff; display: inline-block; padding: 10px 20px; border-radius: 10px; margin-bottom: 20px; animation: pulse 2s infinite; }
+    h3.step-label { font-size: 1.5em; color: #ffcc00; background: #1e90ff; display: inline-block; padding: 10px 20px; border-radius: 10px; margin-bottom: 10px; animation: pulse 2s infinite; }
+    .arrow { font-size: 2em; margin: 10px 0; animation: bounce 1.5s infinite; }
     p { font-size: 1em; margin-bottom: 30px; line-height: 1.5; }
     .button { background: #1e90ff; color: white; padding: 12px 24px; font-size: 1em; text-decoration: none; border-radius: 5px; display: inline-block; margin: 10px auto; }
     .section-dark { background: #1a1a2e; }
@@ -27,6 +28,10 @@
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
     @media (min-width: 600px) {
       h1 { font-size: 3em; }
@@ -45,6 +50,7 @@
   <h2>Train. Measure. Prove You’re Ready for the Next Level.</h2>
   <p>A 12-week remote coaching + performance testing system for serious athletes who want to go pro.</p>
   <h3 class="step-label">STEP 1</h3>
+  <div class="arrow">↓</div>
   <a href="quiz.html" class="button">Take the Pro Potential Quiz</a>
 </header>
 
@@ -98,6 +104,7 @@
   <h2>Ready to Prove You Belong?</h2>
   <p>Take the quiz to get started!</p>
   <h3 class="step-label">STEP 1</h3>
+  <div class="arrow">↓</div>
   <a href="quiz.html" class="button">Take the Pro Potential Quiz</a>
 </section>
 
