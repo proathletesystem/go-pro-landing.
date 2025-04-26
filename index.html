@@ -5,25 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Pro Athlete System</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #0e0e15; color: #ffffff; }
-    header, section { padding: 40px 20px; text-align: center; }
-    .logo { max-width: 150px; margin: 0 auto 20px; width: 100%; height: auto; }
-    h1 { font-size: 2.5em; margin-bottom: 10px; }
-    h2 { font-size: 1.75em; margin-bottom: 20px; }
-    h3.step-label { font-size: 1.5em; color: #ffcc00; background: #1e90ff; display: inline-block; padding: 10px 20px; border-radius: 10px; margin-bottom: 10px; animation: pulse 2s infinite; }
-    .arrow { font-size: 2em; margin: 10px 0; animation: bounce 1.5s infinite; }
-    p { font-size: 1em; margin-bottom: 30px; line-height: 1.5; }
-    .button { background: #1e90ff; color: white; padding: 12px 24px; font-size: 1em; text-decoration: none; border-radius: 5px; display: inline-block; margin: 10px auto; }
+    body { font-family: 'Poppins', Arial, sans-serif; margin: 0; padding: 0; background: #0e0e15; color: #ffffff; }
+    header, section { padding: 60px 20px; text-align: center; }
+    .logo { max-width: 200px; margin: 0 auto 30px; width: 100%; height: auto; }
+    h1 { font-size: 3em; margin-bottom: 20px; font-weight: 700; }
+    h2 { font-size: 2em; margin-bottom: 20px; font-weight: 600; }
+    h3.step-label { font-size: 1.5em; color: #0e0e15; background: #ffcc00; display: inline-block; padding: 10px 20px; border-radius: 10px; margin-bottom: 20px; animation: pulse 2s infinite; }
+    .arrow { font-size: 2.5em; margin: 20px 0; animation: bounce 1.5s infinite; }
+    p { font-size: 1.2em; margin-bottom: 30px; line-height: 1.6; }
+    .button { background: #ffcc00; color: #0e0e15; padding: 16px 32px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 8px; display: inline-block; margin-top: 20px; transition: background 0.3s ease; }
+    .button:hover { background: #e6b800; }
     .section-dark { background: #1a1a2e; }
-    ul { list-style-type: none; padding: 0; font-size: 1em; }
-    ul li { margin-bottom: 10px; }
-    .question { margin-bottom: 20px; text-align: left; }
-    .question p { font-weight: bold; }
-    label { display: block; margin-bottom: 5px; }
-    input[type="email"] { width: 100%; padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc; }
-    button { background-color: #1e90ff; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px; }
-    button:hover { background-color: #0077cc; }
+    ul { list-style-type: none; padding: 0; font-size: 1.1em; }
+    ul li { margin-bottom: 15px; }
     #result { margin-top: 20px; font-size: 18px; font-weight: bold; }
+    nav { position: sticky; top: 0; background: #0e0e15; padding: 10px 20px; display: flex; justify-content: center; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.7); }
+    nav a { color: #ffcc00; margin: 0 15px; text-decoration: none; font-weight: 600; transition: color 0.3s; }
+    nav a:hover { color: #ffffff; }
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
@@ -33,41 +31,52 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+    [data-animate] { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+    [data-animate].animate { opacity: 1; transform: translateY(0); }
     @media (min-width: 600px) {
-      h1 { font-size: 3em; }
-      h2 { font-size: 2em; }
-      p, ul { font-size: 1.2em; }
-      .logo { max-width: 200px; }
+      h1 { font-size: 3.5em; }
+      h2 { font-size: 2.5em; }
+      p, ul { font-size: 1.3em; }
+      .logo { max-width: 250px; }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<nav>
+  <a href="#start">Start</a>
+  <a href="#included">What's Included</a>
+  <a href="#tests">Testing</a>
+  <a href="#who">Who It's For</a>
+  <a href="#bonuses">Bonuses</a>
+  <a href="#final">Join Now</a>
+</nav>
+
 <!-- SECTION 1 - Header -->
-<header>
+<header id="start" data-animate>
   <img src="https://i.imgur.com/4ZfUT5H.png" alt="Pro Athlete System Logo" class="logo">
-  <h1>The Pro Athlete System</h1>
-  <h2>Train. Measure. Prove You’re Ready for the Next Level.</h2>
-  <p>A 12-week remote coaching + performance testing system for serious athletes who want to go pro.</p>
-  <h3 class="step-label">STEP 1</h3>
-  <div class="arrow">↓</div>
-  <a href="quiz.html" class="button">Take the Pro Potential Quiz</a>
+  <h1>Prove You’re Pro-Ready</h1>
+  <h2>Train. Measure. Dominate.</h2>
+  <p>Get the ultimate 12-week remote coaching and performance testing system to show scouts and agents you belong at the next level.</p>
+  <a href="quiz.html" class="button">Start the Pro Potential Quiz</a>
 </header>
 
 <!-- SECTION 2 - What You Get -->
-<section class="section-dark">
-  <h2>What’s Included</h2>
+<section class="section-dark" id="included" data-animate>
+  <h2>What's Included</h2>
   <ul>
-    <li>• Performance Lab-in-a-Box: Testing protocols across strength, power, endurance, and agility</li>
-    <li>• 12-Week Coaching Program: Custom remote training + retesting</li>
-    <li>• Scout-Ready Readiness Report: A PDF you can send to scouts, recruiters, or agents</li>
+    <li>• Performance Lab-in-a-Box: Elite testing across strength, power, endurance, and agility</li>
+    <li>• 12-Week Remote Coaching Program: Personalized training + retesting</li>
+    <li>• Scout-Ready Report: Professional-grade PDF to share with scouts and agents</li>
   </ul>
-  <p><strong>Price:</strong> $1,997 or 3 payments of $697</p>
+  <p><strong>Investment:</strong> $1,997 or 3 payments of $697</p>
+  <a href="quiz.html" class="button">Take the Quiz to Start</a>
 </section>
 
-<!-- SECTION 3 - Sample Tests -->
-<section>
-  <h2>You’ll Be Tested On</h2>
+<!-- SECTION 3 - Testing Details -->
+<section id="tests" data-animate>
+  <h2>What You'll Be Tested On</h2>
   <ul>
     <li>• Broad Jump</li>
     <li>• 12-Min Cooper Run</li>
@@ -75,38 +84,51 @@
     <li>• Rotational Med Ball Throw</li>
     <li>• Pull-Ups, Side Planks, Reverse Lunges, and more</li>
   </ul>
-  <p>These are elite-level metrics — the same ones pros use.</p>
+  <p>Real performance metrics. Real proof you can show the world.</p>
 </section>
 
-<!-- SECTION 4 - Who This Is For -->
-<section class="section-dark">
-  <h2>This Program is Perfect For</h2>
+<!-- SECTION 4 - Who This is For -->
+<section class="section-dark" id="who" data-animate>
+  <h2>Who This is Perfect For</h2>
   <ul>
-    <li>• Athletes prepping for pro tryouts or combines</li>
-    <li>• College players ready to level up</li>
-    <li>• Coaches who want real performance data</li>
+    <li>• Athletes prepping for pro combines and tryouts</li>
+    <li>• College players aiming to go pro</li>
+    <li>• Coaches and recruiters seeking objective data</li>
   </ul>
 </section>
 
 <!-- SECTION 5 - Bonuses + Guarantee -->
-<section>
-  <h2>Join Now and Get</h2>
+<section id="bonuses" data-animate>
+  <h2>Plus Bonuses When You Join</h2>
   <ul>
-    <li>• Private kickoff call with a coach</li>
-    <li>• Printable test packet</li>
-    <li>• Scout profile PDF template</li>
+    <li>• Private kickoff call with your coach</li>
+    <li>• Printable test packet to track results</li>
+    <li>• Pro-ready scout profile PDF template</li>
   </ul>
-  <p><strong>30-Day Guarantee:</strong> If you don’t improve in 30 days, get a full refund. No stress.</p>
+  <p><strong>30-Day Money-Back Guarantee:</strong> See results or get a full refund. Zero risk, all reward.</p>
+  <a href="quiz.html" class="button">Get Started Now</a>
 </section>
 
-<!-- SECTION 6 - Final Call to Action -->
-<section class="section-dark">
-  <h2>Ready to Prove You Belong?</h2>
-  <p>Take the quiz to get started!</p>
-  <h3 class="step-label">STEP 1</h3>
-  <div class="arrow">↓</div>
-  <a href="quiz.html" class="button">Take the Pro Potential Quiz</a>
+<!-- SECTION 6 - Final CTA -->
+<section class="section-dark" id="final" data-animate>
+  <h2>Ready to Dominate?</h2>
+  <p>Your future starts with one click. Take the Pro Potential Quiz and show the world what you're made of.</p>
+  <a href="quiz.html" class="button">Start the Quiz</a>
 </section>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
